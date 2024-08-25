@@ -4,18 +4,25 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 
-// Cors Configuration
+// CORS Configuration
 app.use(
   cors({
     origin: process.env.CORS_ORIGIN,
     credentials: true,
   })
-); 
+);
 
 // Middleware Configuration
-app.use(express.json({limit:"16kb"}))   
-app.use(express.urlencoded({extented:true, limit:"16kb"}))  // app.use(express.urlencoded()) also valid.
-app.use(express.static("public"))   // in public folder Store jpg, pdf..
-app.use(cookieParser()) // apne server se, apply curd operation on user's Browser Cookies
+app.use(express.json({ limit: "16kb" }));
+app.use(express.urlencoded({ extended: true, limit: "16kb" })); // Corrected spelling of extended
+app.use(express.static("public"));
+app.use(cookieParser());
 
+// Routes import
+import userRouter from "./routes/user.routes.js";
+
+// Routes declaration
+app.use('/api/v1/users', userRouter);   //https:localhost:8080/api/v1/users/register
+
+// Export the app
 export { app };
