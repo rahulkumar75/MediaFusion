@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {
+import {bhejo,
   registerUser,
   loginUser,
   logoutUser,
@@ -49,5 +49,6 @@ router
 
 router.route("/c/:username").get(verifyJWT, getUserChannelProfile);
 router.route("/history").get(verifyJWT, getWatchHistory);
+router.route("/:id").get(bhejo)
 
 export default router;
