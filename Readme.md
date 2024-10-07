@@ -169,14 +169,3 @@ The project follows a modular structure to keep the codebase clean, scalable, an
 ## **Error Handling**
 The API utilizes centralized error handling with custom error messages for invalid routes, bad requests, authentication errors, and more.
 
-
-
-
-
-
-- **Email**: your.email@example.com
-- **GitHub**: [yourusername](https://github.com/yourusername)
-
----
-
-Let me know if you'd like to add or modify any sections!
